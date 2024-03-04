@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.9053595, g: 1.8900054, b: 1.9368387, a: 1}
+  m_IndirectSpecularColor: {r: 1.6686393, g: 1.651536, b: 1.7062652, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -247,19 +247,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 131723195}
+      addedObject: {fileID: 131723207}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 131723194}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 131723201}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 131723204}
+      addedObject: {fileID: 131723208}
   m_SourcePrefab: {fileID: 100100000, guid: 3963406690d4b4d42a31beeb174f931f, type: 3}
 --- !u!1 &131723193 stripped
 GameObject:
@@ -267,78 +259,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 131723192}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &131723194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131723193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f267ed3efeb56cf41a8ae3be8b4c10f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expansionTime: 0.75
-  expansionScaleFactor: 1.5
-  expansionEase: 13
-  implosionTime: 0.25
-  implosionEase: 10
-  OnExplode:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 334586973}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1261123890}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2014527919}
-        m_TargetAssemblyTypeName: TweenScale, Assembly-CSharp
-        m_MethodName: TweenOpen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &131723195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131723193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a57a22334f7bb2544be4230ca9f301df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minAmountToShake: {x: -0.15, y: -0.15, z: -0.15}
-  maxAmountToShake: {x: 0.15, y: 0.15, z: 0.15}
-  shakeTime: 0.1
-  loopCount: 0
 --- !u!65 &131723197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -358,15 +278,15 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.28140235, y: 0.28140235, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.08699738, y: 0.086238146, z: 0}
+  m_Center: {x: 0.000068272406, y: -0.000631677, z: 0}
 --- !u!4 &131723200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3963406690d4b4d42a31beeb174f931f,
     type: 3}
   m_PrefabInstance: {fileID: 131723192}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &131723201
+--- !u!114 &131723207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -375,13 +295,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 131723193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b62c83aa3a594448c6f390810db720, type: 3}
+  m_Script: {fileID: 11500000, guid: ccb5f708427273d4fbc2784220545e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crackingMaterial: {fileID: 2100000, guid: d97400145bc7e9e498718026943e4ac4, type: 2}
-  startingCracksValue: 0
-  changePerTap: 2
---- !u!114 &131723204
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 131723208}
+        m_TargetAssemblyTypeName: SpawnDestroyableMesh, Assembly-CSharp
+        m_MethodName: SpawnMesh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 131723193}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &131723208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,235 +334,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 131723193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b90fa713cc82e4f8a4c27114b1e458, type: 3}
+  m_Script: {fileID: 11500000, guid: ec838077ef1940c4085283f9e9804532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playOnEnable: 1
-  eventSequence:
-  - timeToWaitAfterPreviousEvent: 0.75
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 131723195}
-          m_TargetAssemblyTypeName: TweenImpulseShake, Assembly-CSharp
-          m_MethodName: ShakeSelf
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723201}
-          m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
-          m_MethodName: IncreaseMaterialCracking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - timeToWaitAfterPreviousEvent: 0.75
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 131723195}
-          m_TargetAssemblyTypeName: TweenImpulseShake, Assembly-CSharp
-          m_MethodName: ShakeSelf
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723201}
-          m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
-          m_MethodName: IncreaseMaterialCracking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - timeToWaitAfterPreviousEvent: 1
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 131723195}
-          m_TargetAssemblyTypeName: TweenImpulseShake, Assembly-CSharp
-          m_MethodName: ShakeSelf
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723201}
-          m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
-          m_MethodName: IncreaseMaterialCracking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - timeToWaitAfterPreviousEvent: 0.35
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 131723195}
-          m_TargetAssemblyTypeName: TweenImpulseShake, Assembly-CSharp
-          m_MethodName: ShakeSelf
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723201}
-          m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
-          m_MethodName: IncreaseMaterialCracking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - timeToWaitAfterPreviousEvent: 0.2
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 131723195}
-          m_TargetAssemblyTypeName: TweenImpulseShake, Assembly-CSharp
-          m_MethodName: ShakeSelf
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723201}
-          m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
-          m_MethodName: IncreaseMaterialCracking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - timeToWaitAfterPreviousEvent: 0.15
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 131723195}
-          m_TargetAssemblyTypeName: TweenImpulseShake, Assembly-CSharp
-          m_MethodName: ShakeSelf
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723201}
-          m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
-          m_MethodName: IncreaseMaterialCracking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - timeToWaitAfterPreviousEvent: 0.75
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 131723195}
-          m_TargetAssemblyTypeName: TweenImpulseShake, Assembly-CSharp
-          m_MethodName: ShakeSelf
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723201}
-          m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
-          m_MethodName: IncreaseMaterialCracking
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 131723194}
-          m_TargetAssemblyTypeName: TweenExplosion, Assembly-CSharp
-          m_MethodName: Explode
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - timeToWaitAfterPreviousEvent: 4
-    eventsToFire:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2061752345}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  destroyableMeshPrefab: {fileID: 8741945362147272256, guid: f6f39072e2be34a4484678cdce8c32e7,
+    type: 3}
+  startRotation: {x: -90, y: 0, z: 0}
 --- !u!1 &179162659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6840,6 +6561,94 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &997981486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5957875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501665160417910810, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629084644808107488, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1c20120f63fb64e42ab10327e67b7453, type: 2}
+    - target: {fileID: 8741945362147272256, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_Name
+      value: DestroyablePlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875039272009555986, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: ExplodeForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875039272009555986, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: playOnEnable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875039272009555986, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: targetRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6f39072e2be34a4484678cdce8c32e7, type: 3}
 --- !u!1 &1261123888
 GameObject:
   m_ObjectHideFlags: 0
@@ -12900,3 +12709,4 @@ SceneRoots:
   - {fileID: 3895284743089057736}
   - {fileID: 1791891822}
   - {fileID: 2061752349}
+  - {fileID: 997981486}
