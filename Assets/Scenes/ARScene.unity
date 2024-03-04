@@ -275,6 +275,7 @@ MonoBehaviour:
   cutMaterial: {fileID: 0}
   targetRotation: {x: 0, y: 0, z: 0}
   scaleModifier: 0.65
+  meshTargetParent: {fileID: 0}
   playOnEnable: 0
 --- !u!114 &118649507
 MonoBehaviour:
@@ -802,7 +803,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -7000,7 +7001,7 @@ Transform:
   m_GameObject: {fileID: 964248085}
   serializedVersion: 2
   m_LocalRotation: {x: -0.3799282, y: -0.59636784, z: 0.3799282, w: 0.59636784}
-  m_LocalPosition: {x: 0.026, y: 0.696, z: 0.06400001}
+  m_LocalPosition: {x: 0.026, y: 0.837, z: 0.06400001}
   m_LocalScale: {x: 0.017023167, y: 0.9601066, z: 0.72999585}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7062,7 +7063,7 @@ Transform:
   m_GameObject: {fileID: 1177948154}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3799282, y: 0.59636784, z: 0.3799282, w: 0.59636784}
-  m_LocalPosition: {x: -0.008, y: -0.712, z: 0.06400001}
+  m_LocalPosition: {x: -0.008, y: -0.941, z: 0.06400001}
   m_LocalScale: {x: 0.017023167, y: 0.9601066, z: 0.72999585}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12695,6 +12696,7 @@ MonoBehaviour:
   cutMaterial: {fileID: 0}
   targetRotation: {x: 0, y: 0, z: 0}
   scaleModifier: 0.65
+  meshTargetParent: {fileID: 0}
   playOnEnable: 0
 --- !u!114 &1592267258
 MonoBehaviour:
@@ -12781,7 +12783,7 @@ Transform:
   m_GameObject: {fileID: 1672846811}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.2164396, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: -0.476, y: -0.007, z: 0.083000004}
+  m_LocalPosition: {x: -0.642, y: -0.007, z: 0.083000004}
   m_LocalScale: {x: 0.031844, y: 1.5922, z: 0.7961}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -12981,8 +12983,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.485}
-  m_LocalScale: {x: 0.06, y: 0.10000001, z: 0.10000001}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.06599999, y: 0.11, z: 0.11}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1872373907}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -13027,7 +13029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17cd074fea8b9744eaa25d6ba830bb6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCollider: {fileID: 0}
+  targetCollider: {fileID: 195299081}
 --- !u!1 &1830571216
 GameObject:
   m_ObjectHideFlags: 0
@@ -13376,7 +13378,7 @@ Transform:
   m_GameObject: {fileID: 2043657831}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.21643952, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 0.498, y: -0.007, z: 0.083000004}
+  m_LocalPosition: {x: 0.649, y: -0.007, z: 0.083000004}
   m_LocalScale: {x: 0.031844, y: 1.5922, z: 0.7961}
   m_ConstrainProportionsScale: 1
   m_Children: []
