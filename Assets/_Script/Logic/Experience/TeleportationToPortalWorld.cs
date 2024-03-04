@@ -8,7 +8,11 @@ public class TeleportationToPortalWorld : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        ContactPoint point = collision.GetContact(0);
-        collision.gameObject.transform.position = targetCollider.ClosestPoint(point.point);
+        Vector3 contactPoint = collision.GetContact(0).point;
+        Vector3 localContactPoint = transform.InverseTransformPoint(contactPoint);
+
+        Vector3 targetWorldPoint = targetCollider.transform.TransformPoint(localContactPoint);
+
+        collision.transform.position = targetWorldPoint;
     }
 }
