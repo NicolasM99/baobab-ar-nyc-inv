@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: e051cf65f44d7c54e9488200e1e28075, type: 3}
+  - {fileID: 2100000, guid: 1c20120f63fb64e42ab10327e67b7453, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,9 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0147b75d89561cc48bfd7ca4c2d3e99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CutCascades: 4
-  ExplodeForce: 2
+  CutCascades: 5
+  ExplodeForce: -0.1
   gravity: 0
-  cutMaterial: {fileID: 2100000, guid: d97400145bc7e9e498718026943e4ac4, type: 2}
+  cutMaterial: {fileID: 2100000, guid: 1c20120f63fb64e42ab10327e67b7453, type: 2}
   targetRotation: {x: -90, y: 0, z: 0}
+  scaleModifier: 0.7
   playOnEnable: 1

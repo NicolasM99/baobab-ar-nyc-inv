@@ -17,6 +17,7 @@ public class MeshDestroy : MonoBehaviour
 
     public Vector3 targetRotation;
     public float scaleModifier;
+    public Transform meshTargetParent;
     [SerializeField] bool playOnEnable;
 
     private void OnEnable()
@@ -29,7 +30,7 @@ public class MeshDestroy : MonoBehaviour
         DestroyMesh();
     }
 
-    private void DestroyMesh()
+    public void DestroyMesh()
     {
         var originalMesh = GetComponent<MeshFilter>().mesh;
         originalMesh.RecalculateBounds();
@@ -48,12 +49,6 @@ public class MeshDestroy : MonoBehaviour
         for (int i = 0; i < originalMesh.subMeshCount; i++)
         {
             mainPart.Triangles[i] = originalMesh.GetTriangles(i);
-            /*
-            for(int i2 = 0; i < originalMesh.GetTriangles(i).Length; i2++)
-            {
-                Debug.Log(originalMesh.GetTriangles(i)[i2]);
-            }
-            */
         }
 
         parts.Add(mainPart);
@@ -280,7 +275,7 @@ public class MeshDestroy : MonoBehaviour
             GameObject = new GameObject(original.name);
             GameObject.transform.position = original.transform.position;
             GameObject.transform.rotation = Quaternion.Euler(original.targetRotation);
-            GameObject.transform.localScale = original.transform.localScale;
+            GameObject.transform.localScale = original.transform.localScale * original.scaleModifier;
 
             var mesh = new Mesh();
             mesh.name = original.GetComponent<MeshFilter>().mesh.name;
@@ -296,8 +291,8 @@ public class MeshDestroy : MonoBehaviour
             Bounds = mesh.bounds;
 
             var renderer = GameObject.AddComponent<MeshRenderer>();
-            renderer.material = original.cutMaterial;
-            //renderer.materials = original.GetComponent<MeshRenderer>().materials;
+            if(original.cutMaterial != null) renderer.material = original.cutMaterial;
+            else renderer.materials = original.GetComponent<MeshRenderer>().materials;
 
             var filter = GameObject.AddComponent<MeshFilter>();
             filter.mesh = mesh;
