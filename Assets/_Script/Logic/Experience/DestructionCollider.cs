@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class DestructionCollider : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(other.gameObject.name);
-        GameObject.Destroy(other.gameObject);
+        Destroy(collision.gameObject);
     }
 }

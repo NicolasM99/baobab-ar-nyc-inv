@@ -125,4 +125,5 @@ MonoBehaviour:
   cutMaterial: {fileID: 2100000, guid: 1c20120f63fb64e42ab10327e67b7453, type: 2}
   targetRotation: {x: -90, y: 0, z: 0}
   scaleModifier: 0.7
+  meshTargetParent: {fileID: 0}
   playOnEnable: 1
