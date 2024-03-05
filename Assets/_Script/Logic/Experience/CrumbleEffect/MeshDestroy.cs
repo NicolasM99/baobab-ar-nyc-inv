@@ -301,9 +301,12 @@ public class MeshDestroy : MonoBehaviour
             collider.convex = true;
 
             var rigidbody = GameObject.AddComponent<Rigidbody>();
+
+            /*
             var meshDestroy = GameObject.AddComponent<MeshDestroy>();
             meshDestroy.CutCascades = original.CutCascades;
             meshDestroy.ExplodeForce = original.ExplodeForce;
+            */
         }
 
     }
