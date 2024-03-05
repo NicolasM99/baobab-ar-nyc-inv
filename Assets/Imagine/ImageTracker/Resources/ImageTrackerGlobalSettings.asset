@@ -15,6 +15,8 @@ MonoBehaviour:
   imageTargetInfos:
   - id: toto_ar_marker_unity
     texture: {fileID: 2800000, guid: a47057af09434684da89d2816382312e, type: 3}
+  - id: markerJPG
+    texture: {fileID: 2800000, guid: 1e91d052190ce84448e582cf19afa513, type: 3}
   settingsTemplates:
   - {fileID: 11400000, guid: 35c99cc7b662a46eb89cc7a32e239494, type: 2}
   - {fileID: 11400000, guid: 9cf415d375f91458483df57436950575, type: 2}

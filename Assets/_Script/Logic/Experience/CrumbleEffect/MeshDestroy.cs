@@ -301,6 +301,7 @@ public class MeshDestroy : MonoBehaviour
             collider.convex = true;
 
             var rigidbody = GameObject.AddComponent<Rigidbody>();
+            rigidbody.constraints = RigidbodyConstraints.FreezeRotationX;
 
             /*
             var meshDestroy = GameObject.AddComponent<MeshDestroy>();

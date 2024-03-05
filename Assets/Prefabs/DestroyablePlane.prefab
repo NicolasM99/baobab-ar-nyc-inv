@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0147b75d89561cc48bfd7ca4c2d3e99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CutCascades: 5
-  ExplodeForce: -0.1
+  CutCascades: 10
+  ExplodeForce: 1
   gravity: 0
   cutMaterial: {fileID: 2100000, guid: 1c20120f63fb64e42ab10327e67b7453, type: 2}
   targetRotation: {x: -90, y: 0, z: 0}

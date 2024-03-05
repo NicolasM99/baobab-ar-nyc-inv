@@ -23,6 +23,9 @@
         },
         {
             "m_Id": "5b6f6afdac46404b91f537fba8624e88"
+        },
+        {
+            "m_Id": "d2c33691134c4a6cb5a36c4009d8cfa1"
         }
     ],
     "m_Keywords": [],
@@ -233,6 +236,9 @@
         },
         {
             "m_Id": "fd17d3fa3d5541fc8ff8619d6afb0912"
+        },
+        {
+            "m_Id": "b70ee68ec08f448b8e4b1b37cc32c632"
         }
     ],
     "m_GroupDatas": [],
@@ -808,6 +814,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "ff2aea0f72414ccea2330e106e91d329"
+                },
+                "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "b70ee68ec08f448b8e4b1b37cc32c632"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "bde75fb9226a4dca859c1e5fd21aa2c1"
                 },
                 "m_SlotId": 1
             }
@@ -1437,6 +1457,21 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "0b3f1df188a74c189cdc509d7e914079",
+    "m_Id": 0,
+    "m_DisplayName": "SimpleNoise",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -4412,6 +4447,9 @@
         },
         {
             "m_Id": "5b6f6afdac46404b91f537fba8624e88"
+        },
+        {
+            "m_Id": "d2c33691134c4a6cb5a36c4009d8cfa1"
         }
     ]
 }
@@ -6692,6 +6730,42 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "b70ee68ec08f448b8e4b1b37cc32c632",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2899.0,
+            "y": 536.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "0b3f1df188a74c189cdc509d7e914079"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "d2c33691134c4a6cb5a36c4009d8cfa1"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "b757e77f9ac74ac5aa9a8803a822f854",
     "m_Id": 2,
@@ -7768,6 +7842,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "d2c33691134c4a6cb5a36c4009d8cfa1",
+    "m_Guid": {
+        "m_GuidSerialized": "4981a09b-a78d-4006-8996-4d5796da381f"
+    },
+    "m_Name": "SimpleNoise",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "SimpleNoise",
+    "m_DefaultReferenceName": "_SimpleNoise",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 5.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "d33ee130b8cd46ffb2e04115e2fd851b",
@@ -7929,7 +8031,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 2.369999885559082,
+    "m_Value": 5.0,
     "m_DefaultValue": 500.0,
     "m_Labels": []
 }

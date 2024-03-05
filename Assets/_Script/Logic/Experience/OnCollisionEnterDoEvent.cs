@@ -12,4 +12,10 @@ public class OnCollisionEnterDoEvent : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         OnCollisionEvent?.Invoke();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.name);
+        OnCollisionEvent?.Invoke();
+    }
 }

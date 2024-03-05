@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content='width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
+    <meta http-equiv="Permissions-Policy" content="camera=*"/>
     <title>Unity WebGL Player | {{{ PRODUCT_NAME }}}</title>
     <link rel="stylesheet" href="TemplateData/style.css">
 
@@ -84,6 +85,7 @@
             .then(async ()=>{
                 console.log("ImageTracker initialized!");
                 await LoadWebcams();
+                StartAR()
                 document.getElementById("startARButton").style.display = "block";
             })
             .catch(error => {
@@ -187,31 +189,48 @@
                 }  
             }
             async function LoadWebcams(){
-                let backCams = [];
-                let devices = await navigator.mediaDevices.enumerateDevices();
-                devices.forEach(mediaDevice => {
-                    if (mediaDevice.kind === 'videoinput' && !mediaDevice.label.includes('facing front')) {
-                        backCams.push(mediaDevice);
-                    }
-                });
+                // let backCams = [];
+                // let devices = await navigator.mediaDevices.enumerateDevices();
+                // devices.forEach(mediaDevice => {
+                //     if (mediaDevice.kind === 'videoinput' && !mediaDevice.label.includes('facing front')) {
+                //         backCams.push(mediaDevice);
+                //     }
+                // });
                 var select = document.getElementById("chooseCamSel");
                 select.style.display = "block";
                 var count = 0;
-                //reverse array because some Android phones can't distinguish front and back cams at first load
-                //and when this happens, most of the time, front cam goes first and back cam goes last
-                backCams = backCams.reverse();
-                backCams.forEach(mediaDevice => {
+                // //reverse array because some Android phones can't distinguish front and back cams at first load
+                // //and when this happens, most of the time, front cam goes first and back cam goes last
+                // backCams = backCams.reverse();
+                // backCams.forEach(mediaDevice => {
+                //     const option = document.createElement('option');
+                //     option.value = mediaDevice.deviceId;
+                //     let label = `Camera ${count}`;
+                //     if (mediaDevice.label) {
+                //         label = mediaDevice.label
+                //     }
+                //     const textNode = document.createTextNode(label);
+                //     option.appendChild(textNode);
+                //     select.appendChild(option);
+                //     count++;
+                // }); 
+                let stream = null;
+                const constraints = {
+                    video: true,
+                };
+
+                try {
+                    stream = await navigator.mediaDevices.getUserMedia(constraints);
                     const option = document.createElement('option');
-                    option.value = mediaDevice.deviceId;
+                    option.value = stream.id
                     let label = `Camera ${count}`;
-                    if (mediaDevice.label) {
-                        label = mediaDevice.label
-                    }
                     const textNode = document.createTextNode(label);
                     option.appendChild(textNode);
                     select.appendChild(option);
-                    count++;
-                });
+                    /* use the stream */
+                } catch (err) {
+                    /* handle the error */
+                } 
                 iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
             }
             function SelectCam(){
