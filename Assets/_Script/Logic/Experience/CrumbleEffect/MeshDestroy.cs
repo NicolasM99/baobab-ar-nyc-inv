@@ -11,7 +11,10 @@ public class MeshDestroy : MonoBehaviour
     private Plane edgePlane = new Plane();
 
     public int CutCascades = 1;
-    public float ExplodeForce = 0;
+    public float MinExplodeForce = 0;
+    public float MaxExplodeForce = 0;
+    public float MinTorqueForce = 0;
+    public float MaxTorqueForce = 0;
     public float gravity;
     public Material cutMaterial;
 
@@ -19,6 +22,15 @@ public class MeshDestroy : MonoBehaviour
     public float scaleModifier;
     public Transform meshTargetParent;
     [SerializeField] bool playOnEnable;
+    [SerializeField] float waitTimeBetweenFragments;
+
+    WaitForSeconds waitTime;
+
+    private void Awake()
+    {
+        waitTime = new WaitForSeconds(waitTimeBetweenFragments);
+        Debug.Log("new wait time is " + waitTime + waitTimeBetweenFragments);
+    }
 
     private void OnEnable()
     {
@@ -31,6 +43,12 @@ public class MeshDestroy : MonoBehaviour
     }
 
     public void DestroyMesh()
+    {
+        StartCoroutine(HandleDestroyMesh());
+    }
+
+    /**
+    public void STORAGEMESH()
     {
         var originalMesh = GetComponent<MeshFilter>().mesh;
         originalMesh.RecalculateBounds();
@@ -60,9 +78,18 @@ public class MeshDestroy : MonoBehaviour
                 var bounds = parts[i].Bounds;
                 bounds.Expand(0.5f);
 
-                var plane = new Plane(UnityEngine.Random.onUnitSphere, new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x),
-                                                                                   UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
-                                                                                   UnityEngine.Random.Range(bounds.min.z, bounds.max.z)));
+                Vector3 planeNormal = UnityEngine.Random.onUnitSphere;
+                /*Vector3 planePoint = new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x),
+                                                 UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
+                                                 UnityEngine.Random.Range(bounds.min.z, bounds.max.z));
+
+                Vector3 planePoint = UnityEngine.Random.onUnitSphere * 0.5f;
+
+                //Vector3 planePoint = Vector3.zero;
+
+                Debug.Log("Plane normal is " + planeNormal + " and plane point is " + planePoint);
+
+                var plane = new Plane(planeNormal, planePoint);
 
                 subParts.Add(GenerateMesh(parts[i], plane, true));
                 subParts.Add(GenerateMesh(parts[i], plane, false));
@@ -77,6 +104,102 @@ public class MeshDestroy : MonoBehaviour
             Rigidbody rb = parts[i].GameObject.GetComponent<Rigidbody>();
             rb.AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
         }
+
+        Destroy(gameObject);
+    }
+    **/
+
+    private IEnumerator HandleDestroyMesh()
+    {
+        var originalMesh = GetComponent<MeshFilter>().mesh;
+        originalMesh.RecalculateBounds();
+        var parts = new List<PartMesh>();
+        var subParts = new List<PartMesh>();
+
+        var mainPart = new PartMesh()
+        {
+            UV = originalMesh.uv,
+            Vertices = originalMesh.vertices,
+            Normals = originalMesh.normals,
+            Triangles = new int[originalMesh.subMeshCount][],
+            Bounds = originalMesh.bounds
+        };
+
+        for (int i = 0; i < originalMesh.subMeshCount; i++)
+        {
+            mainPart.Triangles[i] = originalMesh.GetTriangles(i);
+        }
+
+        parts.Add(mainPart);
+        GetComponent<MeshRenderer>().enabled = false;
+        List<PartMesh> firstParts = new();
+
+        for (var c = 0; c < CutCascades; c++)
+        {
+            for (var i = 0; i < parts.Count; i++)
+            {
+                var bounds = parts[i].Bounds;
+                bounds.Expand(0.5f);
+
+                Vector3 planeNormal = UnityEngine.Random.onUnitSphere + gameObject.transform.position;
+                Vector3 planePoint = (UnityEngine.Random.onUnitSphere * 0.9f) + gameObject.transform.position;
+
+                //Vector3 planePoint = Vector3.zero;
+
+                Debug.Log("Plane normal is " + planeNormal + " and plane point is " + planePoint);
+
+                var plane = new Plane(planeNormal, planePoint);
+
+                subParts.Add(GenerateMesh(parts[i], plane, true));
+                subParts.Add(GenerateMesh(parts[i], plane, false));
+
+                /*
+                //Creates the base plane to hide the effect
+                if(c == 0)
+                {
+                    firstParts.Add(parts[i]);
+                    parts[i].MakeGameobject(this);
+                    parts[i].GameObject.GetComponent<Rigidbody>().useGravity = false;
+                }
+                */
+
+                //If on last iteration, spawn parts and apply forces
+
+            }
+            parts = new List<PartMesh>(subParts);
+            subParts.Clear();
+
+            if (c == CutCascades - 1)
+            {
+                for (int i = 0; i < parts.Count; i++)
+                {
+                    parts[i].MakeGameobject(this);
+                    Debug.Log("created new object " + parts[i]);
+                }
+
+                for(int i = 0; i < parts.Count; i++)
+                {
+                    Rigidbody rb = parts[i].GameObject.GetComponent<Rigidbody>();
+                    rb.useGravity = true;
+                    rb.AddForceAtPosition(parts[i].Bounds.center * (UnityEngine.Random.Range(MinExplodeForce, MaxExplodeForce)), transform.position);
+                    rb.AddRelativeTorque(parts[i].Bounds.center * (UnityEngine.Random.Range(MinTorqueForce, MaxTorqueForce)), ForceMode.Impulse);
+                    Debug.Log("Adding force to " + parts[i]);
+
+                    yield return waitTime;
+                }
+            }
+        }
+
+        /*
+        for (var i = 0; i < parts.Count; i++)
+        {
+            parts[i].MakeGameobject(this);
+            Rigidbody rb = parts[i].GameObject.GetComponent<Rigidbody>();
+            rb.AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
+
+            yield return waitTime;
+        }
+        */
 
         Destroy(gameObject);
     }
@@ -287,21 +410,23 @@ public class MeshDestroy : MonoBehaviour
             {
                 mesh.SetTriangles(Triangles[i], i, true);
             }
-               
+
             Bounds = mesh.bounds;
 
             var renderer = GameObject.AddComponent<MeshRenderer>();
-            if(original.cutMaterial != null) renderer.material = original.cutMaterial;
+            if (original.cutMaterial != null) renderer.material = original.cutMaterial;
             else renderer.materials = original.GetComponent<MeshRenderer>().materials;
 
             var filter = GameObject.AddComponent<MeshFilter>();
             filter.mesh = mesh;
 
+            /*
             var collider = GameObject.AddComponent<MeshCollider>();
             collider.convex = true;
+            */
 
             var rigidbody = GameObject.AddComponent<Rigidbody>();
-            rigidbody.constraints = RigidbodyConstraints.FreezeRotationX;
+            rigidbody.useGravity = false;
 
             /*
             var meshDestroy = GameObject.AddComponent<MeshDestroy>();

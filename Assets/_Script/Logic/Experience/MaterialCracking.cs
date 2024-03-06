@@ -5,19 +5,29 @@ using UnityEngine;
 public class MaterialCracking : MonoBehaviour
 {
     [SerializeField] Material crackingMaterial;
+    [SerializeField] string propertyToAffect;
     [SerializeField] float startingCracksValue;
-    [SerializeField] float changePerTap;
-    float currentCracks;
+    [SerializeField] float animationTime;
 
     private void Start()
     {
-        crackingMaterial.SetFloat("_CracksAmount", startingCracksValue);
-        currentCracks = 0;
+        crackingMaterial.SetFloat(propertyToAffect, startingCracksValue);
     }
 
-    public void IncreaseMaterialCracking()
+    public void StartCracks()
     {
-        currentCracks += changePerTap;
-        crackingMaterial.SetFloat("_CracksAmount", currentCracks);
+        StartCoroutine(HandleCracks());
+    }
+
+    IEnumerator HandleCracks()
+    {
+        float currentTime = 0;
+
+        while(currentTime < animationTime)
+        {
+            currentTime += Time.deltaTime;
+            crackingMaterial.SetFloat(propertyToAffect, Mathf.Lerp(0, 0.7f, currentTime/animationTime));
+            yield return null;
+        }
     }
 }
