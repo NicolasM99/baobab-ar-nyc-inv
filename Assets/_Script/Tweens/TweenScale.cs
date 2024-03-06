@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TweenScale : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class TweenScale : MonoBehaviour
     [SerializeField] bool scalesToZeroOnDisable;
     [SerializeField] bool startsScaledToZero;
 
+    [SerializeField] UnityEvent OnComplete;
+
     private void Start()
     {
         if (startsScaledToZero) gameObject.transform.localScale = Vector3.zero;
@@ -21,12 +24,12 @@ public class TweenScale : MonoBehaviour
 
     void OnEnable()
     {
-        if (playsOnEnable) LeanTween.scale(gameObject, targetScale, animationTime).setEase(easeType).setDelay(startDelay);
+        if (playsOnEnable) LeanTween.scale(gameObject, targetScale, animationTime).setEase(easeType).setDelay(startDelay).setOnComplete(() => OnComplete?.Invoke());
     }
 
     public void TweenOpen()
     {
-        LeanTween.scale(gameObject, targetScale, animationTime).setEase(easeType).setDelay(startDelay);
+        LeanTween.scale(gameObject, targetScale, animationTime).setEase(easeType).setDelay(startDelay).setOnComplete(() => OnComplete?.Invoke());
     }
 
     public void TweenClose()

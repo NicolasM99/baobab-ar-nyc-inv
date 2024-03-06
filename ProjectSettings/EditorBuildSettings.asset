@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ARSceneSquare.unity
-    guid: d54064101c3249143be24bb22e788810
+    path: Assets/Scenes/VideoScene.unity
+    guid: 19843b29c49f9814fa019b884c4c248f
   m_configObjects: {}
