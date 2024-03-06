@@ -382,17 +382,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
@@ -500,15 +500,31 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 131723197}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 131723226}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 131723225}
+      addedObject: {fileID: 131723232}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 131723228}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 131723233}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 131723235}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 131723227}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3963406690d4b4d42a31beeb174f931f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 131723231}
   m_SourcePrefab: {fileID: 100100000, guid: 3963406690d4b4d42a31beeb174f931f, type: 3}
 --- !u!1 &131723193 stripped
 GameObject:
@@ -516,8 +532,140 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 131723192}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &131723197
-BoxCollider:
+--- !u!23 &131723194 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 3963406690d4b4d42a31beeb174f931f,
+    type: 3}
+  m_PrefabInstance: {fileID: 131723192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &131723200 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3963406690d4b4d42a31beeb174f931f,
+    type: 3}
+  m_PrefabInstance: {fileID: 131723192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &131723226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131723193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToWait: 0.1
+  OnWaitComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 131723232}
+        m_TargetAssemblyTypeName: MaterialCracking, Assembly-CSharp
+        m_MethodName: StartCracks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 131723233}
+        m_TargetAssemblyTypeName: WaitBeforeEvent, Assembly-CSharp
+        m_MethodName: StartWait
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 131723235}
+        m_TargetAssemblyTypeName: WaitBeforeEvent, Assembly-CSharp
+        m_MethodName: StartWait
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  playOnEnable: 0
+--- !u!114 &131723227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131723193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91fc9178a0b0c3d4bb8b6d91b16d9893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerOptions:
+    triggerType: 2
+    minimumCollisionForce: 0
+    filterCollisionsByTag: 0
+    triggerAllowedTags: []
+    triggerKey: 0
+  fractureOptions:
+    fragmentCount: 150
+    xAxis: 1
+    yAxis: 1
+    zAxis: 0
+    detectFloatingFragments: 0
+    asynchronous: 0
+    insideMaterial: {fileID: 0}
+    textureScale: {x: 1, y: 1}
+    textureOffset: {x: 0, y: 0}
+  refractureOptions:
+    enableRefracturing: 0
+    maxRefractureCount: 1
+    invokeCallbacks: 0
+  callbackOptions:
+    onFracture:
+      m_PersistentCalls:
+        m_Calls: []
+    onCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+  currentRefractureCount: 0
+--- !u!54 &131723228
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131723193}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 12
+  m_CollisionDetection: 0
+--- !u!64 &131723231
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -531,19 +679,14 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.02840918, y: 0.023046123, z: 0.029364085}
-  m_Center: {x: -0.0010964924, y: 0.004075878, z: 0.02980616}
---- !u!4 &131723200 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3963406690d4b4d42a31beeb174f931f,
-    type: 3}
-  m_PrefabInstance: {fileID: 131723192}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &131723225
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: 3963406690d4b4d42a31beeb174f931f, type: 3}
+--- !u!114 &131723232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -552,14 +695,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 131723193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec838077ef1940c4085283f9e9804532, type: 3}
+  m_Script: {fileID: 11500000, guid: 06b62c83aa3a594448c6f390810db720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyableMeshPrefab: {fileID: 8741945362147272256, guid: f6f39072e2be34a4484678cdce8c32e7,
-    type: 3}
-  centerPoint: {fileID: 1097232549}
-  startRotation: {x: -90, y: 0, z: 0}
---- !u!114 &131723226
+  meshRenderer: {fileID: 131723194}
+  propertyToAffect: _SphereMaskRadius
+  steps: 6
+  maxLerpValue: 0
+  startingValue: 15
+  animationTime: 3
+  lerpTime: 0.25
+  debugMode: 0
+  materialNameText: {fileID: 0}
+  materialFloatText: {fileID: 0}
+--- !u!114 &131723233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,13 +720,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 2
+  timeToWait: 4.5
   OnWaitComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131723225}
-        m_TargetAssemblyTypeName: SpawnDestroyableMesh, Assembly-CSharp
-        m_MethodName: SpawnMesh
+      - m_Target: {fileID: 131723227}
+        m_TargetAssemblyTypeName: Fracture, RuntimeAssembly
+        m_MethodName: ComputeFracture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -587,10 +736,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 131723193}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+  playOnEnable: 0
+--- !u!114 &131723235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131723193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToWait: 3.5
+  OnWaitComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1973552940}
+        m_TargetAssemblyTypeName: AmbientLightingFade, Assembly-CSharp
+        m_MethodName: StartFadeEffect
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1471,8 +1637,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597041066}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000047452264, y: -0.5819663, z: 0.00003395866, w: 0.813213}
-  m_LocalPosition: {x: 3.5, y: 0, z: 0.12}
+  m_LocalRotation: {x: 0.00003696051, y: -0.54311156, z: 0.000023906894, w: 0.8396606}
+  m_LocalPosition: {x: 3.353, y: 0, z: -0.405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6931,8 +7097,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913460356}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000047452264, y: -0.5819663, z: 0.00003395866, w: 0.813213}
-  m_LocalPosition: {x: 3.5, y: 0, z: 0.12}
+  m_LocalRotation: {x: 0.00003696051, y: -0.54311156, z: 0.000023906894, w: 0.8396606}
+  m_LocalPosition: {x: 3.353, y: 0, z: -0.405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6953,11 +7119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movepoints:
   - {x: 3.5, y: 0, z: 0.12}
-  - {x: 3.5, y: 0, z: 0.12}
+  - {x: 3.353, y: 0, z: -0.405}
   - {x: 2, y: 0, z: -1.6}
   - {x: 1, y: 0, z: -2}
-  - {x: 0, y: 0, z: -1.3}
-  - {x: 0, y: 0, z: -1.5}
+  - {x: 0, y: 0, z: -1.6}
+  - {x: 0, y: 0, z: -1.6}
   movementTime: 4
   easeType: 7
   OnComplete:
@@ -6992,18 +7158,6 @@ MonoBehaviour:
   OnWaitComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1973552940}
-        m_TargetAssemblyTypeName: AmbientLightingFade, Assembly-CSharp
-        m_MethodName: StartFadeEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 131723226}
         m_TargetAssemblyTypeName: WaitBeforeEvent, Assembly-CSharp
         m_MethodName: StartWait

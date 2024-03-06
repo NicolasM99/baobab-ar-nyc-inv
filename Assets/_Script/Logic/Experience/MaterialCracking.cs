@@ -13,6 +13,8 @@ public class MaterialCracking : MonoBehaviour
     [SerializeField] float animationTime;
     [SerializeField] float lerpTime;
 
+    [SerializeField] bool debugMode;
+
     [SerializeField] TextMeshProUGUI materialNameText;
     [SerializeField] TextMeshProUGUI materialFloatText;
 
@@ -24,8 +26,8 @@ public class MaterialCracking : MonoBehaviour
         meshRenderer.material = materialCopy;
         materialCopy.SetFloat(propertyToAffect, startingValue);
 
-        if(materialNameText.isActiveAndEnabled) materialNameText.text = "Current material is " + materialCopy.name;
-        if(materialFloatText.isActiveAndEnabled) materialFloatText.text = "Current sphere mask value is " + materialCopy.GetFloat(propertyToAffect);
+        if(debugMode && materialNameText.isActiveAndEnabled) materialNameText.text = "Current material is " + materialCopy.name;
+        if(debugMode && materialFloatText.isActiveAndEnabled) materialFloatText.text = "Current sphere mask value is " + materialCopy.GetFloat(propertyToAffect);
     }
 
     public void StartCracks()
@@ -59,7 +61,7 @@ public class MaterialCracking : MonoBehaviour
             {
                 currentTime += Time.deltaTime;
                 materialCopy.SetFloat(propertyToAffect, Mathf.Lerp(currentStep, targetStep, currentTime / lerpTime));
-                if (materialFloatText.isActiveAndEnabled)  materialFloatText.text = "Current sphere mask value is " + materialCopy.GetFloat(propertyToAffect);
+                if (debugMode && materialFloatText.isActiveAndEnabled)  materialFloatText.text = "Current sphere mask value is " + materialCopy.GetFloat(propertyToAffect);
                 yield return null;
             }
             currentTime = 0;

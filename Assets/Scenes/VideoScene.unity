@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 3
+  timeToWait: 5
   OnWaitComplete:
     m_PersistentCalls:
       m_Calls:
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 4
+  timeToWait: 6
   OnWaitComplete:
     m_PersistentCalls:
       m_Calls:
@@ -480,10 +480,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 131723217}
   propertyToAffect: _SphereMaskRadius
-  steps: 4
+  steps: 6
   maxLerpValue: 0
   startingValue: 15
-  animationTime: 1.5
+  animationTime: 3
   lerpTime: 0.25
   materialNameText: {fileID: 2022974082}
   materialFloatText: {fileID: 1574137864}
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 2
+  timeToWait: 4
   OnWaitComplete:
     m_PersistentCalls:
       m_Calls:
