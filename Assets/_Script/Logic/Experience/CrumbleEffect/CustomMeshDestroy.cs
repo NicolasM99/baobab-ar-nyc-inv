@@ -1,9 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class MeshDestroy : MonoBehaviour
+public class CustomMeshDestroy : MonoBehaviour
 {
     private bool edgeSet = false;
     private Vector3 edgeVertex = Vector3.zero;
@@ -23,6 +23,8 @@ public class MeshDestroy : MonoBehaviour
     public Transform meshTargetParent;
     [SerializeField] bool playOnEnable;
     [SerializeField] float waitTimeBetweenFragments;
+
+    [SerializeField] GameObject[] planes;
 
     WaitForSeconds waitTime;
 
@@ -47,68 +49,6 @@ public class MeshDestroy : MonoBehaviour
         StartCoroutine(HandleDestroyMesh());
     }
 
-    /**
-    public void STORAGEMESH()
-    {
-        var originalMesh = GetComponent<MeshFilter>().mesh;
-        originalMesh.RecalculateBounds();
-        var parts = new List<PartMesh>();
-        var subParts = new List<PartMesh>();
-
-        var mainPart = new PartMesh()
-        {
-            UV = originalMesh.uv,
-            Vertices = originalMesh.vertices,
-            Normals = originalMesh.normals,
-            Triangles = new int[originalMesh.subMeshCount][],
-            Bounds = originalMesh.bounds
-        };
-
-        for (int i = 0; i < originalMesh.subMeshCount; i++)
-        {
-            mainPart.Triangles[i] = originalMesh.GetTriangles(i);
-        }
-
-        parts.Add(mainPart);
-
-        for (var c = 0; c < CutCascades; c++)
-        {
-            for (var i = 0; i < parts.Count; i++)
-            {
-                var bounds = parts[i].Bounds;
-                bounds.Expand(0.5f);
-
-                Vector3 planeNormal = UnityEngine.Random.onUnitSphere;
-                /*Vector3 planePoint = new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x),
-                                                 UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
-                                                 UnityEngine.Random.Range(bounds.min.z, bounds.max.z));
-
-                Vector3 planePoint = UnityEngine.Random.onUnitSphere * 0.5f;
-
-                //Vector3 planePoint = Vector3.zero;
-
-                Debug.Log("Plane normal is " + planeNormal + " and plane point is " + planePoint);
-
-                var plane = new Plane(planeNormal, planePoint);
-
-                subParts.Add(GenerateMesh(parts[i], plane, true));
-                subParts.Add(GenerateMesh(parts[i], plane, false));
-            }
-            parts = new List<PartMesh>(subParts);
-            subParts.Clear();
-        }
-
-        for (var i = 0; i < parts.Count; i++)
-        {
-            parts[i].MakeGameobject(this);
-            Rigidbody rb = parts[i].GameObject.GetComponent<Rigidbody>();
-            rb.AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
-        }
-
-        Destroy(gameObject);
-    }
-    **/
-
     private IEnumerator HandleDestroyMesh()
     {
         var originalMesh = GetComponent<MeshFilter>().mesh;
@@ -132,36 +72,31 @@ public class MeshDestroy : MonoBehaviour
 
         parts.Add(mainPart);
         GetComponent<MeshRenderer>().enabled = false;
-
-        for (var c = 0; c < CutCascades; c++)
+        
+        for (var c = 0; c < planes.Length; c++)
         {
             for (var i = 0; i < parts.Count; i++)
             {
+                /*
                 var bounds = parts[i].Bounds;
                 bounds.Expand(0.5f);
+                */
 
-                Vector3 planeNormal;
-                Vector3 planePoint;
+                GameObject currentPlane = planes[c];
+                Vector3 planePoint = currentPlane.transform.position;
+                Vector3 planeNormal = currentPlane.transform.up;
 
-                if (c != CutCascades - 1)
-                {
-                    planeNormal = UnityEngine.Random.onUnitSphere;
-                    planePoint = (UnityEngine.Random.onUnitSphere * 0) + gameObject.transform.position;
-
-                    Debug.Log("plane point is " + planePoint + ", gameObject position is " + gameObject.transform.position);
-                }
-                else
-                {
-                    planeNormal = (UnityEngine.Random.onUnitSphere * 0.3f);
-                    planeNormal += gameObject.transform.position + gameObject.transform.localScale * 0.8f;
-                    planeNormal.z = gameObject.transform.position.z;
-
-                    planePoint = gameObject.transform.position;
-
-                    Debug.Log("Plane point is " + planePoint + ", plane normal is " + planeNormal);
-                }
+                Debug.Log("Cutting part " + i + " with plane " + c + ".Plane point is " + planePoint + " and plane normal is " + planeNormal);
 
                 var plane = new Plane(planeNormal, planePoint);
+
+                Debug.Log("Plane normal is " + plane.normal);
+                
+                /*
+                GameObject visual = GameObject.CreatePrimitive(PrimitiveType.Plane);
+                visual.transform.position = planePoint;
+                visual.transform.up = planeNormal;
+                */
 
                 subParts.Add(GenerateMesh(parts[i], plane, true));
                 subParts.Add(GenerateMesh(parts[i], plane, false));
@@ -170,11 +105,14 @@ public class MeshDestroy : MonoBehaviour
             parts = new List<PartMesh>(subParts);
             subParts.Clear();
 
-            if (c == CutCascades - 1)
+            if (c == planes.Length - 1)
             {
+                Debug.Log("Reached final iteration");
+
                 for (int i = 0; i < parts.Count; i++)
                 {
                     parts[i].MakeGameobject(this);
+                    Debug.Log("Creating gameobject out of part " + i);
                 }
 
                 for (int i = 0; i < parts.Count; i++)
@@ -183,11 +121,14 @@ public class MeshDestroy : MonoBehaviour
                     rb.useGravity = true;
                     rb.AddForceAtPosition(parts[i].Bounds.center * (UnityEngine.Random.Range(MinExplodeForce, MaxExplodeForce)), transform.position);
                     rb.AddRelativeTorque(parts[i].Bounds.center * (UnityEngine.Random.Range(MinTorqueForce, MaxTorqueForce)), ForceMode.Impulse);
+                    Debug.Log("Applied force to part " + i);
 
                     yield return waitTime;
                 }
             }
         }
+        
+
 
         /*
         for (var i = 0; i < parts.Count; i++)
@@ -200,12 +141,12 @@ public class MeshDestroy : MonoBehaviour
         }
         */
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void OnDrawGizmos()
     {
-        
+
     }
 
     private PartMesh GenerateMesh(PartMesh original, Plane plane, bool left)
@@ -397,7 +338,7 @@ public class MeshDestroy : MonoBehaviour
                 Triangles[i] = _Triangles[i].ToArray();
         }
 
-        public void MakeGameobject(MeshDestroy original)
+        public void MakeGameobject(CustomMeshDestroy original)
         {
             GameObject = new GameObject(original.name);
             GameObject.transform.position = original.transform.position;
@@ -441,3 +382,4 @@ public class MeshDestroy : MonoBehaviour
 
     }
 }
+

@@ -9,7 +9,7 @@ public class AmbientLightingFade : MonoBehaviour
     [SerializeField] float holdTime;
 
     float minIntensity = 0.85f;
-    float maxIntensity = 8f;
+    float maxIntensity = 1.85f;
 
     public void StartFadeEffect()
     {

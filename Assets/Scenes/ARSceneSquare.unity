@@ -557,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyableMeshPrefab: {fileID: 8741945362147272256, guid: f6f39072e2be34a4484678cdce8c32e7,
     type: 3}
+  centerPoint: {fileID: 1097232549}
   startRotation: {x: -90, y: 0, z: 0}
 --- !u!114 &131723226
 MonoBehaviour:
@@ -8754,13 +8755,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CutCascades: 10
-  ExplodeForce: 1
+  MinExplodeForce: 0
+  MaxExplodeForce: 0
+  MinTorqueForce: 0
+  MaxTorqueForce: 0
   gravity: 0
   cutMaterial: {fileID: 2100000, guid: 2e183fea5bae64346bfea942bd455c36, type: 2}
   targetRotation: {x: 0, y: 0, z: 0}
   scaleModifier: 1
   meshTargetParent: {fileID: 0}
   playOnEnable: 0
+  waitTimeBetweenFragments: 0
 --- !u!1 &1973552934
 GameObject:
   m_ObjectHideFlags: 0

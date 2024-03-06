@@ -1,17 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MaterialCracking : MonoBehaviour
 {
-    [SerializeField] Material crackingMaterial;
+    [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] string propertyToAffect;
-    [SerializeField] float startingCracksValue;
+    [SerializeField] float steps;
+    [SerializeField] float maxLerpValue;
+    [SerializeField] float startingValue;
     [SerializeField] float animationTime;
+    [SerializeField] float lerpTime;
 
-    private void Start()
+    [SerializeField] TextMeshProUGUI materialNameText;
+    [SerializeField] TextMeshProUGUI materialFloatText;
+
+    Material materialCopy;
+
+    private void OnEnable()
     {
-        crackingMaterial.SetFloat(propertyToAffect, startingCracksValue);
+        materialCopy = new Material(meshRenderer.material);
+        meshRenderer.material = materialCopy;
+        materialCopy.SetFloat(propertyToAffect, startingValue);
+
+        if(materialNameText.isActiveAndEnabled) materialNameText.text = "Current material is " + materialCopy.name;
+        if(materialFloatText.isActiveAndEnabled) materialFloatText.text = "Current sphere mask value is " + materialCopy.GetFloat(propertyToAffect);
     }
 
     public void StartCracks()
@@ -20,14 +34,36 @@ public class MaterialCracking : MonoBehaviour
     }
 
     IEnumerator HandleCracks()
-    {
+    { 
         float currentTime = 0;
+        float differencePerStep = startingValue / steps;
+        float animationTimePerStep = animationTime / steps;
+        float currentStep;
+        float targetStep;
 
-        while(currentTime < animationTime)
+        for(int i = 0; i < steps; i++)
         {
-            currentTime += Time.deltaTime;
-            crackingMaterial.SetFloat(propertyToAffect, Mathf.Lerp(0, 0.7f, currentTime/animationTime));
-            yield return null;
+            while (currentTime < animationTimePerStep)
+            {
+                currentTime += Time.deltaTime;
+                yield return null;
+            }
+
+            currentTime = 0;
+            currentStep = startingValue - (differencePerStep * (i)); // 1   ->   20 - (3.33 * 1) = 16.667
+            targetStep = startingValue - (differencePerStep * (i + 1)); //1    ->  16.
+
+            Debug.Log("Current step " + currentStep + " and targetStep is " + targetStep);
+
+            while (currentTime < lerpTime)
+            {
+                currentTime += Time.deltaTime;
+                materialCopy.SetFloat(propertyToAffect, Mathf.Lerp(currentStep, targetStep, currentTime / lerpTime));
+                if (materialFloatText.isActiveAndEnabled)  materialFloatText.text = "Current sphere mask value is " + materialCopy.GetFloat(propertyToAffect);
+                yield return null;
+            }
+            currentTime = 0;
         }
+        
     }
 }
