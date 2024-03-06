@@ -59,13 +59,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitude: 1
+    - _Amplitude: 6.75
     - _CracksAmount: 3
     - _Frequency: 20
-    - _FresnelPower: 4
+    - _FresnelPower: 0.54
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SimpleNoise: 5
+    - _SimpleNoise: 7.15
     - _Speed: 0.18
     - _SphereMaskRadius: 0.7
     m_Colors:

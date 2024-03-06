@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33384103, g: 0.31212988, b: 0.27100158, a: 1}
+  m_IndirectSpecularColor: {r: 0.33384097, g: 0.3121302, b: 0.27100158, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1133,10 +1133,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3629084644808107488, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8741945362147272256, guid: f6f39072e2be34a4484678cdce8c32e7,
         type: 3}
       propertyPath: m_Name
       value: DestroyablePlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741945362147272256, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741945362147272256, guid: f6f39072e2be34a4484678cdce8c32e7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
