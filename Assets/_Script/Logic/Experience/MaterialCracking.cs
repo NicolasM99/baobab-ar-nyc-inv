@@ -10,6 +10,7 @@ public class MaterialCracking : MonoBehaviour
     [SerializeField] float steps;
     [SerializeField] float maxLerpValue;
     [SerializeField] float startingValue;
+    [SerializeField] float startingLerpValue;
     [SerializeField] float animationTime;
     [SerializeField] float lerpTime;
 
@@ -38,7 +39,7 @@ public class MaterialCracking : MonoBehaviour
     IEnumerator HandleCracks()
     { 
         float currentTime = 0;
-        float differencePerStep = startingValue / steps;
+        float differencePerStep = startingLerpValue / steps;
         float animationTimePerStep = animationTime / steps;
         float currentStep;
         float targetStep;
@@ -52,8 +53,8 @@ public class MaterialCracking : MonoBehaviour
             }
 
             currentTime = 0;
-            currentStep = startingValue - (differencePerStep * (i)); // 1   ->   20 - (3.33 * 1) = 16.667
-            targetStep = startingValue - (differencePerStep * (i + 1)); //1    ->  16.
+            currentStep = startingLerpValue - (differencePerStep * (i)); // 1   ->   20 - (3.33 * 1) = 16.667
+            targetStep = startingLerpValue - (differencePerStep * (i + 1)); //1    ->  16.
 
             Debug.Log("Current step " + currentStep + " and targetStep is " + targetStep);
 
