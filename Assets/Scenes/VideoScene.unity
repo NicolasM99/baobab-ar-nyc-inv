@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 6
+  timeToWait: 1.5
   OnWaitComplete:
     m_PersistentCalls:
       m_Calls:
@@ -485,6 +485,7 @@ MonoBehaviour:
   startingValue: 15
   animationTime: 3
   lerpTime: 0.25
+  debugMode: 0
   materialNameText: {fileID: 2022974082}
   materialFloatText: {fileID: 1574137864}
 --- !u!23 &131723217 stripped
