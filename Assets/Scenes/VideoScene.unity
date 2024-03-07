@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.85
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 90f017166d031f042aeba6d529d64a9a, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9ae755b7d3695af41b5e2fd060d5d67b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32023516, g: 0.29720533, b: 0.25554645, a: 1}
+  m_IndirectSpecularColor: {r: 0.32033274, g: 0.31820503, b: 0.32584876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131723193}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9aa27061692e124d8ab5f15b1c869c9, type: 3}
   m_Name: 
@@ -1321,13 +1321,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057271627}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5262193, y: -0.45515725, z: 0.40268898, w: 0.59478295}
+  m_LocalRotation: {x: 0.6534205, y: 0, z: 0, w: 0.7569952}
   m_LocalPosition: {x: -0.036375266, y: 2.463, z: 0.253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830571217}
-  m_LocalEulerAnglesHint: {x: 83, y: -74.85, z: 0}
+  m_LocalEulerAnglesHint: {x: 81.6, y: 0, z: 0}
 --- !u!114 &1057271629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10.2
+  m_Intensity: 4.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2591,9 +2591,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988a35352638b524b9d8ea1c129201ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInTime: 1
-  fadeOutTime: 1
-  holdTime: 0.25
+  fadeInTime: 0
+  fadeOutTime: 0
+  holdTime: 0
 --- !u!1 &2014527914
 GameObject:
   m_ObjectHideFlags: 0
